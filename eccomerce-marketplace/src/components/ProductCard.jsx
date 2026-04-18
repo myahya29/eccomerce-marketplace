@@ -7,9 +7,9 @@ const ProductCard = ({ product }) => {
 
   return (
     <div className="card">
-      <img src={product.image} height="120" />
+      <img src={product.image} />
 
-      <h4>{product.title.slice(0, 20)}...</h4>
+      <h4>{product.title.slice(0, 40)}</h4>
       <p>${product.price}</p>
 
       <button onClick={() => addToCart(product)}>
@@ -17,7 +17,9 @@ const ProductCard = ({ product }) => {
       </button>
 
       <Link to={`/product/${product.id}`}>
-        <button>View</button>
+        <button className="secondary-btn">
+          View Details
+        </button>
       </Link>
     </div>
   );

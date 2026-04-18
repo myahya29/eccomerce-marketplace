@@ -11,19 +11,19 @@ const Cart = () => {
       <h2>Checkout</h2>
 
       {cart.length === 0 ? (
-        <p>No items in cart</p>
+        <p>Your cart is empty</p>
       ) : (
         <>
           {cart.map((item, index) => (
             <div key={index} className="card">
-              <p>{item.title}</p>
+              <h4>{item.title}</h4>
               <p>${item.price}</p>
             </div>
           ))}
 
           <h3>Total: ${total.toFixed(2)}</h3>
 
-          <button style={{ width: "100%", marginTop: "20px" }}>
+          <button className="checkout-btn">
             Proceed to Checkout
           </button>
         </>

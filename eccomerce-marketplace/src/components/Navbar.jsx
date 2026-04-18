@@ -6,21 +6,19 @@ const Navbar = () => {
   const { cart } = useContext(CartContext);
 
   return (
-    <nav style={{
-      display: "flex",
-      justifyContent: "space-between",
-      padding: "15px 30px",
-      background: "#111",
-      borderBottom: "1px solid #333"
-    }}>
-      <Link to="/" style={{ color: "#7b2ff7", fontWeight: "bold" }}>
-        Zaryonix Store
-      </Link>
+    <div className="navbar">
+      <div className="nav-inner">
+        
+        <Link to="/" className="logo">
+          Zaryonix Store
+        </Link>
 
-      <Link to="/cart" style={{ color: "white" }}>
-        🛒 {cart.length}
-      </Link>
-    </nav>
+        <Link to="/cart" className="cart">
+          🛒 {cart.length}
+        </Link>
+
+      </div>
+    </div>
   );
 };
 
