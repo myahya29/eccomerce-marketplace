@@ -7,18 +7,27 @@ const Cart = () => {
   const total = cart.reduce((acc, item) => acc + item.price, 0);
 
   return (
-    <div>
+    <div className="container">
       <h2>Checkout</h2>
 
-      {cart.length === 0 && <p>No items in cart</p>}
+      {cart.length === 0 ? (
+        <p>No items in cart</p>
+      ) : (
+        <>
+          {cart.map((item, index) => (
+            <div key={index} className="card">
+              <p>{item.title}</p>
+              <p>${item.price}</p>
+            </div>
+          ))}
 
-      {cart.map((item, index) => (
-        <div key={index}>
-          <p>{item.title} - ${item.price}</p>
-        </div>
-      ))}
+          <h3>Total: ${total.toFixed(2)}</h3>
 
-      <h3>Total: ${total.toFixed(2)}</h3>
+          <button style={{ width: "100%", marginTop: "20px" }}>
+            Proceed to Checkout
+          </button>
+        </>
+      )}
     </div>
   );
 };

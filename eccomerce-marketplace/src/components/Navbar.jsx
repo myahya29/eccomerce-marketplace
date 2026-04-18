@@ -9,11 +9,13 @@ const Navbar = () => {
     <nav style={{
       display: "flex",
       justifyContent: "space-between",
-      padding: "10px",
-      background: "black",
-      color: "white"
+      padding: "15px 30px",
+      background: "#111",
+      borderBottom: "1px solid #333"
     }}>
-      <Link to="/" style={{ color: "white" }}>Zaryonix Shop</Link>
+      <Link to="/" style={{ color: "#7b2ff7", fontWeight: "bold" }}>
+        Zaryonix Store
+      </Link>
 
       <Link to="/cart" style={{ color: "white" }}>
         🛒 {cart.length}

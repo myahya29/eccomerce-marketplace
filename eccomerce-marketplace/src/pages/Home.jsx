@@ -6,18 +6,19 @@ const Home = () => {
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.log(err));
+      .then(res => res.json())
+      .then(data => setProducts(data));
   }, []);
 
   return (
-    <div>
+    <div className="container">
       <h2>Products</h2>
 
-      {products.map((item) => (
-        <ProductCard key={item.id} product={item} />
-      ))}
+      <div className="grid">
+        {products.map(item => (
+          <ProductCard key={item.id} product={item} />
+        ))}
+      </div>
     </div>
   );
 };

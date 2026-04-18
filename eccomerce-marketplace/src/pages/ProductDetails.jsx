@@ -7,15 +7,14 @@ const ProductDetails = () => {
 
   useEffect(() => {
     fetch(`https://fakestoreapi.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data))
-      .catch((err) => console.log(err));
+      .then(res => res.json())
+      .then(data => setProduct(data));
   }, [id]);
 
   if (!product) return <h2>Loading...</h2>;
 
   return (
-    <div>
+    <div className="container">
       <h2>{product.title}</h2>
       <img src={product.image} width="200" />
       <p>${product.price}</p>
